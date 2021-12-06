@@ -1,0 +1,276 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --bg-color1: rgb(134, 191, 226);
+    --bg-color2: rgb(112, 126, 227);
+    --font-color: rgb(54, 55, 59);
+    --font-hover-color: rgb(170, 170, 170);
+    --heading-color: rgb(50, 50, 50);
+    --shadow-color: rgba(0, 0, 0, .2);
+    --heading-table: rgba(255, 255, 255, 0.5);
+    --bg-form-table: rgba(255, 255, 255, 0.3);
+    --bg-form-table-hover: rgba(255, 255, 255, 0.2);
+    --bg-footer: rgb(255, 255, 255);
+    font-family: 'Josefin Slab', serif;
+}
+
+html {
+    background: linear-gradient(90deg, var(--bg-color1) 0%, var(--bg-color2) 100%);
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 4rem;
+    letter-spacing: 0.5rem;
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+.title h1 {
+    margin-top: 20%;
+    height: 65vh;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+    color: var(--font-color);
+}
+
+
+/************************************************
+********************HEADER***********************
+************************************************/
+
+.nav-list {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-item a {
+    color: var(--heading-color);
+    letter-spacing: 1.2px;
+}
+
+.nav-item a:hover {
+    color: var(--font-hover-color);
+}
+
+.nav-item:first-child {
+    margin-right: auto;
+    margin-left: 2rem;
+}
+
+.wrapper {
+    display: grid;
+}
+
+.box1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.box2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/************************************************
+********************FOOTER***********************
+************************************************/
+
+footer {
+    padding: 40px 0;
+    background-color: var(--bg-footer);
+    margin-top: 5%;
+}
+
+footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--heading-color);
+}
+
+footer .social a {
+    font-size: 24px;
+    color: inherit;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+
+footer .social a:hover {
+    opacity: 0.9;
+    color: var(--font-hover-color);
+}
+
+footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+footer ul li a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+footer ul li a:hover {
+    opacity: 1;
+}
+
+footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--font-hover-color);
+}
+
+
+/************************************************
+*************FORMULAIRE SIMULATION***************
+************************************************/
+
+.form {
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.form .container {
+    position: relative;
+}
+
+.form form {
+    background: var(--bg-form-table);
+    padding: 2rem;
+    border-radius: 20px;
+    border-left: 1px solid var(--bg-form-table);
+    border-top: 1px solid var(--bg-form-table);
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
+    text-align: center;
+}
+
+.form h2 {
+    color: var(--heading-color);
+    opacity: .7;
+    font-size: 1.4rem;
+    margin-bottom: 60px;
+}
+
+.form input {
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--bg-form-table);
+    border-top: 1px solid var(--bg-form-table);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+    box-shadow: 4px 4px 60px var(--shadow-color);
+    color: var(--heading-color);
+    transition: all .3s;
+    margin-bottom: 2em;
+    font-family: 'Josefin Slab', serif;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+table {
+    margin: auto;
+    table-layout: fixed;
+}
+
+.td_labels {
+    text-align: center;
+    width: 200px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.td_inputs {
+    width: 200px;
+}
+
+
+/************************************************
+*************TABLEAU HISTORIQUE******************
+************************************************/
+
+.content-table th,
+.content-table td {
+    padding: 15px;
+    background-color: var(--bg-form-table);
+    color: var(--font-color);
+}
+
+.content-table th {
+    text-align: center;
+}
+
+.content-table thead th {
+    background-color: var(--heading-table);
+}
+
+.content-table tbody tr:hover {
+    background-color: var(--bg-form-table);
+}
+
+.content-table tbody td {
+    position: relative;
+    text-align: center;
+}
+
+.content-table tbody td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-form-table-hover);
+}
