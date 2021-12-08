@@ -74,7 +74,7 @@
 							</tr>
 							<tr>
 								<td class="td_labels"></td>
-								<td class="td_inputs"><input class="buttonSimulation" type="submit" name="simulate" value="Simuler"></td>
+								<td class="td_inputs"><div class="inputs-button"><input class="buttonSimulation" type="submit" name="simulate" value="Simuler"></div></td>
 							</tr>
 						</table><br>
 						<h2 class="resultat-simulation"><?php echo simulation(); ?><h2>

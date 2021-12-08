@@ -20,7 +20,7 @@
                 <form action="" method="POST">
                     <input type="text" placeholder="Entrer votre identifiant" name="username" required><br>
                     <input type="password" placeholder="Entrer votre mot de passe" name="password" required><br>
-                    <input type="submit" name="connexion" value="Connexion"><br>
+                    <div class="inputs-button"><input type="submit" name="connexion" value="Connexion"></div><br>
                     <p class="message-error"><?php $message=connect(); echo $message;?></p>
                 </form>
             </div>

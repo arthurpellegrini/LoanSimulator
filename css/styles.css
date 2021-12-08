@@ -15,6 +15,7 @@
     --heading-color: rgb(50, 50, 50);
     --shadow-color: rgba(0, 0, 0, .2);
     --burger: rgb(0, 0, 0);
+    --inputs-button-color: rgba(216, 223, 224, 0.5);
     --bg-form: rgba(255, 255, 255, 0.4);
     --bg-head-table: rgba(255, 255, 255, 0.4);
     --bg-table: rgba(255, 255, 255, 0.3);
@@ -166,8 +167,8 @@ h2 {
 .page-connexion {
     width: 300px;
     margin-top: 60px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -270,6 +271,15 @@ h2 {
     transition: all .3s;
     margin-bottom: 2em;
     font-family: 'Josefin Slab', serif;
+}
+
+.inputs-button input:hover {
+    border: none;
+    border-left: 1px solid var(--bg-table);
+    border-top: 1px solid var(--bg-table);
+    border-radius: 50px;
+    box-shadow: 4px 4px 60px var(--shadow-color);
+    background: var(--inputs-button-color);
 }
 
 
