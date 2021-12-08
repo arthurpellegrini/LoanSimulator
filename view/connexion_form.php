@@ -13,15 +13,17 @@
 
 <body>
     <?php include("../php/connexion.php"); ?>
-    <div class="form">
-        <h1>Connexion</h1>
-        <div class="container">
-            <form action="" method="POST">
-                <input type="text" placeholder="Entrer votre identifiant" name="username" required><br>
-                <input type="password" placeholder="Entrer votre mot de passe" name="password" required><br>
-                <input type="submit" name="connexion" value="Connexion"><br>
-                <?php connect(); ?>
-            </form>
+    <div class="page-connexion">
+        <div class="form">
+            <h2 class="connexion-title">Connexion</h2>
+            <div class="container">
+                <form action="" method="POST">
+                    <input type="text" placeholder="Entrer votre identifiant" name="username" required><br>
+                    <input type="password" placeholder="Entrer votre mot de passe" name="password" required><br>
+                    <input type="submit" name="connexion" value="Connexion"><br>
+                    <p class="message-error"><?php $message=connect(); echo $message;?></p>
+                </form>
+            </div>
         </div>
     </div>
 </body>

@@ -7,48 +7,100 @@
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
 	<link href="../css/styles.css" rel="stylesheet" />
+
 	<title>Projet PHP 2021</title>
 </head>
 
 <!-- NAVIGATION LIST -->
 
 <body>
-	<header>
-		<ul class="nav-list">
-			<li class="nav-item">
-				<a href="https://www.iut-velizy-rambouillet.uvsq.fr/"><img src="../assets/img/logo_iut_velizy.png" height="40" alt="Logo de l'IUT de Vélizy." /></a>
-			</li>
-			<li class="nav-item"><a href="#simulation">Simulation</a></li>
-			<li class="nav-item"><a href="#historique">Historique</a></li>
-			<li class="nav-item"><a href="#">Readme</a></li>
-			<li class="nav-item"><a href="connexion_form.php">Connexion</a></li>
-		</ul>
+	<header class="header">
+		<nav class="navbar">
+			<a href="https://www.iut-velizy-rambouillet.uvsq.fr/" class="nav-logo">
+				<img src="../assets/img/logo_iut_velizy.png" height="40" alt="Logo de l'IUT de Vélizy." />
+			</a>
+			<ul class="nav-menu">
+				<li class="nav-item">
+					<a href="#simulation" class="nav-link">Simulation</a>
+				</li>
+				<li class="nav-item">
+					<a href="#historique" class="nav-link">Historique</a>
+				</li>
+				<li class="nav-item">
+					<a href="README.html" class="nav-link">Readme</a>
+				</li>
+				<li class="nav-item">
+					<a href="connexion_form.php" class="nav-link">Connexion</a>
+				</li>
+			</ul>
+			<div class="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+		</nav>
 	</header>
 
 	<div class="title">
 		<h1>Projet Php 2021</h1>
 	</div>
 
+	<!-- INCLUDES -->
+	<?php include("../php/historique.php"); ?>
+	<!-- /INCLUDES -->
+
 	<div class="wrapper">
-		<?php include("../php/historique.php"); ?>
+
 		<!-- SIMULATION -->
 		<div class="box1" id="simulation">
-			<br>
 			<h2>Simulation</h2>
 			<div class="form">
 				<div class="container">
-					<?php include("../view/simulation_form.php"); ?>
+					<?php include("../php/simulation.php"); ?>
+
+					<form action="../view/index.php#simulation" method="POST">
+						<table>
+							<tr>
+								<td class="td_labels"><label for="capital">Capital (€)</label></td>
+								<td class="td_inputs"><input id="capital" name="capital" type="number" min="0.01" step="0.01" placeholder="Entrer le capital" required></td>
+							</tr>
+							<tr>
+								<td class="td_labels"><label for="rate">Taux (%)</label></td>
+								<td class="td_inputs"><input id="rate" name="rate" type="number" step="0.01" placeholder="Entrer le taux" required></td>
+							</tr>
+							<tr>
+								<td class="td_labels"><label for="monthNumber">Nombre de mois</label></td>
+								<td class="td_inputs"><input id="monthNumber" name="monthNumber" type="number" min="1" step="1" placeholder="Entrer le nombre de mois" required></td>
+							</tr>
+							<tr>
+								<td class="td_labels"></td>
+								<td class="td_inputs"><input class="buttonSimulation" type="submit" name="simulate" value="Simuler"></td>
+							</tr>
+						</table><br>
+						<h2 class="resultat-simulation"><?php echo simulation(); ?><h2>
+					</form>
 				</div>
 			</div>
 		</div>
 
-
 		<!-- HISTORIQUE -->
 		<div class="box2" id="historique">
-			<br>
 			<h2>Historique</h2>
 			<div class="content-table">
-				<?php include("../view/historique_table.php"); ?>
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Capital</th>
+							<th>Taux</th>
+							<th>Nombre de Mois</th>
+							<th>Mensualité</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php read_history(); ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -76,5 +128,7 @@
 		</p>
 	</footer>
 </body>
+
+<script type="text/javascript" src="../script/menu.js"></script>
 
 </html>

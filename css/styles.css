@@ -6,17 +6,20 @@
     text-decoration: none;
 }
 
-:root {
+ :root {
     --bg-color1: rgb(134, 191, 226);
     --bg-color2: rgb(112, 126, 227);
-    --font-color: rgb(54, 55, 59);
+    --font-color: rgb(48, 49, 53);
     --font-hover-color: rgb(170, 170, 170);
+    --font-error-color: rgb(255, 0, 0);
     --heading-color: rgb(50, 50, 50);
     --shadow-color: rgba(0, 0, 0, .2);
-    --heading-table: rgba(255, 255, 255, 0.5);
-    --bg-form-table: rgba(255, 255, 255, 0.3);
-    --bg-form-table-hover: rgba(255, 255, 255, 0.2);
-    --bg-footer: rgb(255, 255, 255);
+    --burger: rgb(0, 0, 0);
+    --bg-form: rgba(255, 255, 255, 0.4);
+    --bg-head-table: rgba(255, 255, 255, 0.4);
+    --bg-table: rgba(255, 255, 255, 0.3);
+    --bg-table2: rgba(255, 255, 255, 0.4);
+    --bg-navbar-footer: rgb(255, 255, 255);
     font-family: 'Josefin Slab', serif;
 }
 
@@ -40,17 +43,28 @@ h1 {
 }
 
 .title h1 {
-    margin-top: 20%;
-    height: 65vh;
+    margin-top: 45vh;
+    height: 70vh;
 }
 
 h2 {
     text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    color: var(--font-color);
+}
+
+.simulation h2 {
     font-size: 2rem;
     line-height: 3rem;
-    letter-spacing: 0.2rem;
-    font-weight: 500;
-    color: var(--font-color);
+}
+
+.resultat-simulation {
+    font-weight: bold;
+}
+
+.message-error {
+    color: var(--font-error-color);
 }
 
 
@@ -58,45 +72,302 @@ h2 {
 ********************HEADER***********************
 ************************************************/
 
-.nav-list {
-    padding: 1rem 0;
+.header {
+    background: var(--bg-navbar-footer);
+}
+
+.header li {
+    list-style: none;
+}
+
+.header a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    font-weight: 1000;
+    color: var(--font-color);
+}
+
+.navbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--burger);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .nav-item {
-    margin-right: 2rem;
-    text-transform: uppercase;
-    font-weight: 600;
+    margin-left: 5rem;
 }
 
-.nav-item a {
-    color: var(--heading-color);
-    letter-spacing: 1.2px;
+.nav-link {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--font-color);
 }
 
-.nav-item a:hover {
+.nav-link:hover {
     color: var(--font-hover-color);
 }
 
-.nav-item:first-child {
-    margin-right: auto;
-    margin-left: 2rem;
+.nav-logo {
+    margin-top: 5px;
 }
+
+
+/************************************************
+******************WRAPPER(GRID)******************
+************************************************/
 
 .wrapper {
     display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-areas: "simulation historique";
 }
 
 .box1 {
+    margin-left: 5%;
+    margin-right: 2%;
     grid-column: 1;
     grid-row: 1;
+    grid-area: simulation;
 }
 
 .box2 {
+    margin-left: 2%;
+    margin-right: 5%;
     grid-column: 2;
     grid-row: 1;
+    grid-area: historique;
+}
+
+.page-connexion {
+    width: 300px;
+    margin-top: 60px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr;
+        grid-template-areas: "simulation" "historique";
+    }
+    .box1 {
+        margin-right: 5%;
+    }
+    .box2 {
+        margin-left: 5%;
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background-color: var(--bg-navbar-footer);
+        width: 100%;
+        text-align: center;
+        transition: 0.2s;
+        box-shadow: 20px 20px 40px -6px var(--shadow-color);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/************************************************
+*************FORMULAIRE SIMULATION***************
+************************************************/
+
+.form {
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.form,
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.form .container {
+    position: relative;
+}
+
+.form form {
+    background: var(--bg-form);
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 20px;
+    border-left: 1px solid var(--bg-form);
+    border-top: 1px solid var(--bg-form);
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
+    text-align: center;
+}
+
+.form h2 {
+    color: var(--heading-color);
+    opacity: .7;
+    font-size: 1.4rem;
+    margin-bottom: 60px;
+}
+
+.form input {
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--bg-table);
+    border-top: 1px solid var(--bg-table);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+    box-shadow: 4px 4px 60px var(--shadow-color);
+    color: var(--heading-color);
+    transition: all .3s;
+    margin-bottom: 2em;
+    font-family: 'Josefin Slab', serif;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+/* Chrome */
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Opéra*/
+
+input::-o-inner-spin-button,
+input::-o-outer-spin-button {
+    -o-appearance: none;
+    margin: 0
+}
+
+.form table {
+    margin: auto;
+    table-layout: fixed;
+}
+
+.td_labels {
+    text-align: center;
+    width: 200px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.td_inputs {
+    width: 200px;
+}
+
+
+/************************************************
+*************TABLEAU HISTORIQUE******************
+************************************************/
+
+.content-table {
+    display: flex;
+    margin-top: 1%;
+}
+
+.content-table table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
+    border-radius: 20px;
+}
+
+.content-table th {
+    font-size: 18px;
+    text-align: center;
+    background-color: var(--bg-head-table);
+    padding: 14px 14px 20px 20px;
+}
+
+.content-table td {
+    padding: 8px 8px 8px 20px;
+}
+
+.content-table .ligne-impair td {
+    background-color: var(--bg-table);
+}
+
+.content-table .ligne-pair td {
+    background-color: var(--bg-table2);
+}
+
+.content-table th:first-child {
+    -webkit-border-top-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.content-table th:last-child {
+    -webkit-border-top-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.content-table tr:last-child td:first-child {
+    -webkit-border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.content-table tr:last-child td:last-child {
+    -webkit-border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 
@@ -106,7 +377,7 @@ h2 {
 
 footer {
     padding: 40px 0;
-    background-color: var(--bg-footer);
+    background-color: var(--bg-navbar-footer);
     margin-top: 5%;
 }
 
@@ -164,113 +435,4 @@ footer .copyright {
     text-align: center;
     font-size: 13px;
     color: var(--font-hover-color);
-}
-
-
-/************************************************
-*************FORMULAIRE SIMULATION***************
-************************************************/
-
-.form {
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-.form .container {
-    position: relative;
-}
-
-.form form {
-    background: var(--bg-form-table);
-    padding: 2rem;
-    border-radius: 20px;
-    border-left: 1px solid var(--bg-form-table);
-    border-top: 1px solid var(--bg-form-table);
-    box-shadow: 20px 20px 40px -6px var(--shadow-color);
-    text-align: center;
-}
-
-.form h2 {
-    color: var(--heading-color);
-    opacity: .7;
-    font-size: 1.4rem;
-    margin-bottom: 60px;
-}
-
-.form input {
-    background: transparent;
-    border: none;
-    border-left: 1px solid var(--bg-form-table);
-    border-top: 1px solid var(--bg-form-table);
-    padding: 1rem;
-    width: 200px;
-    border-radius: 50px;
-    box-shadow: 4px 4px 60px var(--shadow-color);
-    color: var(--heading-color);
-    transition: all .3s;
-    margin-bottom: 2em;
-    font-family: 'Josefin Slab', serif;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-table {
-    margin: auto;
-    table-layout: fixed;
-}
-
-.td_labels {
-    text-align: center;
-    width: 200px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-.td_inputs {
-    width: 200px;
-}
-
-
-/************************************************
-*************TABLEAU HISTORIQUE******************
-************************************************/
-
-.content-table th,
-.content-table td {
-    padding: 15px;
-    background-color: var(--bg-form-table);
-    color: var(--font-color);
-}
-
-.content-table th {
-    text-align: center;
-}
-
-.content-table thead th {
-    background-color: var(--heading-table);
-}
-
-.content-table tbody tr:hover {
-    background-color: var(--bg-form-table);
-}
-
-.content-table tbody td {
-    position: relative;
-    text-align: center;
-}
-
-.content-table tbody td:hover:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-form-table-hover);
 }

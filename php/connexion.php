@@ -16,12 +16,13 @@ function connect()
             $_SESSION["password"] = $adminPassword;
             header("Location: ../view/admin.php");
         }
-        return "<p>Champs éronnés</p>";
+        return "<p>Nom d'utilisateur ou mot de passe incorrect</p>";
     }
 }
 
 function disconnect()
 {
+    session_start();
     session_destroy();
     header("Location: ../view/index.php");
     exit();

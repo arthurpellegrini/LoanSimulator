@@ -4,10 +4,17 @@ function read_history() {
     $file="../assets/historique.csv";
     $fp = fopen($file, "r");
 
+    $couleur="pair";
     for($i=0;$i<10;$i++){
         $ligne = fgetcsv($fp,1024,";");
         if($ligne != null){
-            echo "<tr>";
+            if ($couleur=="pair") {
+                $couleur = "impair";
+            }
+            else {
+                $couleur = "pair";
+            }
+            echo "<tr class='ligne-".$couleur."'>";
             foreach ($ligne as $cell)
                 echo "<td>$cell</td>";
             echo "</tr>";
