@@ -66,6 +66,7 @@ h2 {
 
 .hidden {
     color: transparent;
+    opacity: 0;
 }
 
 .coin-gauche {
