@@ -1,48 +1,6 @@
 ---------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 20:59:34
-Montant emprunté : 24000€
-Mensualités : 24
-Taux : 5%
-Montant mensuel : 1052.91€
----------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 20:59:44
-Montant emprunté : 50000€
-Mensualités : 65
-Taux : 5%
-Montant mensuel : 879.69€
----------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 21:01:35
-Montant emprunté : 450000€
-Mensualités : 54
-Taux : 4%
-Montant mensuel : 9119.67€
----------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 21:01:46
-Montant emprunté : 1€
-Mensualités : 1
-Taux : 1%
-Montant mensuel : 1€
----------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 21:02:03
-Montant emprunté : 1€
-Mensualités : 2
-Taux : 1%
-Montant mensuel : 0.5€
----------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 23:23:45
-Montant emprunté : 230€
-Mensualités : 4
-Taux : 3%
-Montant mensuel : 57.86€
----------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 23:23:49
-Montant emprunté : 230€
-Mensualités : 4
-Taux : 3%
-Montant mensuel : 57.86€
----------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 08/12/2021 à 23:26:23
-Montant emprunté : 230€
-Mensualités : 4
-Taux : 3%
-Montant mensuel : 57.86€
+Simulation de 127.0.0.1, le 09/12/2021 à 23:03:19
+Montant emprunté : 10€
+Mensualités : 10
+Taux : 10%
+Montant mensuel : 1.05€

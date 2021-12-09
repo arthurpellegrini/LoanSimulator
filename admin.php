@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION["username"], $_SESSION["password"])) {
-    header("Location: ../view/connexion_form.php?error-message=1");
+    header("Location: connexion_form.php?error-message=1");
 } ?>
 
 <!DOCTYPE html>
@@ -10,8 +10,8 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
-    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link href="css/styles.css" rel="stylesheet" />
     <title>Projet PHP 2021 - Backend</title>
 </head>
 
@@ -19,14 +19,14 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
     <header class="header">
         <nav class="navbar">
             <a href="https://www.iut-velizy-rambouillet.uvsq.fr/" class="nav-logo">
-                <img src="../assets/img/logo_iut_velizy.png" height="40" alt="Logo de l'IUT de Vélizy." />
+                <img src="assets/img/logo_iut_velizy.png" height="40" alt="Logo de l'IUT de Vélizy." />
             </a>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#logs" class="nav-link">Logs</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../php/deconnexion.php" class="nav-link">Déconnexion</a>
+                    <a href="php/deconnexion.php" class="nav-link">Déconnexion</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -41,7 +41,7 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
         <h1>Backend</h1>
     </div>
 
-    <?php include("../php/logs.php"); ?>
+    <?php include("php/logs.php"); ?>
     <div class="logs" id="logs">
         <h2>Logs</h2>
         <div class="terminal">
@@ -50,15 +50,15 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
             </div>
         </div>
         <div class="buttons">
-            <a href="../php/telechargement.php" download>Télécharger</a>
-            <a href="../php/suppresion.php">Supprimer</a>
+            <a href="php/telechargement.php" download>Télécharger</a>
+            <a href="php/suppresion.php">Supprimer</a>
         </div>
     </div>
 
     <footer>
         <section class="footer">
             <div class="social">
-                <a href="https://github.com/arthurpellegrini/loan-simulator"><img src="../assets/img/github_logo.png" height="40" alt="Logo de Github." /></a>
+                <a href="https://github.com/arthurpellegrini/loan-simulator"><img src="assets/img/github_logo.png" height="40" alt="Logo de Github." /></a>
             </div>
 
             <ul class="list">
@@ -79,7 +79,7 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
 
 </body>
 
-<script type="text/javascript" src="../script/menu.js"></script>
-<script type="text/javascript" src="../script/scrollbar.js"></script>
+<script type="text/javascript" src="script/menu.js"></script>
+<script type="text/javascript" src="script/scrollbar.js"></script>
 
 </html>

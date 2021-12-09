@@ -6,5 +6,5 @@ function deleteLogs()
     fclose($file);                      // Close the opened file
 }
 deleteLogs();
-header("Location: ../view/admin.php#logs");
+header("Location: ../admin.php#logs");
 ?>

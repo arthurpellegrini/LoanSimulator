@@ -16,13 +16,13 @@ function generateLog($capital, $rate, $monthNumber, $monthlyCost)
 
 function writeLogs($data)
 {
-    $file = fopen("../assets/logs.txt", 'a');  // Opens the logs file with the 'append' mode
+    $file = fopen("assets/logs.txt", 'a');  // Opens the logs file with the 'append' mode
     fwrite($file, $data);               // Append the data (log) to the file
     fclose($file);                      // Close the opened file
 }
 
 function readLogs() {
-    $txt_file = fopen('../assets/logs.txt','r');
+    $txt_file = fopen('assets/logs.txt','r');
     while ($line = fgets($txt_file)) {
         echo($line)."<br>";
     }

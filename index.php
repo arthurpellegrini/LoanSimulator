@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
-	<link href="../css/styles.css" rel="stylesheet" />
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+	<link href="css/styles.css" rel="stylesheet" />
 
 	<title>Projet PHP 2021</title>
 </head>
@@ -17,7 +17,7 @@
 	<header class="header">
 		<nav class="navbar">
 			<a href="https://www.iut-velizy-rambouillet.uvsq.fr/" class="nav-logo">
-				<img src="../assets/img/logo_iut_velizy.png" height="40" alt="Logo de l'IUT de Vélizy." />
+				<img src="assets/img/logo_iut_velizy.png" height="40" alt="Logo de l'IUT de Vélizy." />
 			</a>
 			<ul class="nav-menu">
 				<li class="nav-item">
@@ -46,9 +46,9 @@
 	</div>
 
 	<!-- INCLUDES -->
-	<?php include("../php/historique.php"); 
-	include("../php/simulation.php"); 
-	include("../php/logs.php");?>
+	<?php include("php/historique.php"); 
+	include("php/simulation.php"); 
+	include("php/logs.php");?>
 	<!-- /INCLUDES -->
 
 	<div class="index-gridbag">
@@ -59,7 +59,7 @@
 			<div class="form">
 				<div class="form-simulation"></div>
 				<div class="container">
-					<form action="../view/index.php#simulation" method="POST">
+					<form action="#simulation" method="POST">
 						<table>
 							<tr>
 								<td class="td_labels"><label for="capital">Capital (€)</label></td>
@@ -109,7 +109,7 @@
 	<!-- FOOTER -->
 	<footer>
 		<div class="social">
-			<a href="https://github.com/arthurpellegrini/loan-simulator"><img src="../assets/img/github_logo.png" height="40" alt="Logo de Github." /></a>
+			<a href="https://github.com/arthurpellegrini/loan-simulator"><img src="assets/img/github_logo.png" height="40" alt="Logo de Github." /></a>
 		</div>
 
 		<ul class="list">
@@ -130,6 +130,6 @@
 	</footer>
 </body>
 
-<script type="text/javascript" src="../script/menu.js"></script>
+<script type="text/javascript" src="script/menu.js"></script>
 
 </html>
