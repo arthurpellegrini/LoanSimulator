@@ -28,12 +28,4 @@ function readLogs() {
     }
     fclose($txt_file);
 }
-
-function deleteLogs()
-{
-    $file = fopen("../assets/logs.txt", 'w');  // Opens the logs file with the 'write' mode
-    // fwrite($file, '');       
-    ftruncate($file,0);           // Removes text from the logs file
-    fclose($file);                      // Close the opened file
-}
 ?>

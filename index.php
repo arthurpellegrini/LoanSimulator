@@ -46,7 +46,9 @@
 	</div>
 
 	<!-- INCLUDES -->
-	<?php include("../php/historique.php"); ?>
+	<?php include("../php/historique.php"); 
+	include("../php/simulation.php"); 
+	include("../php/logs.php");?>
 	<!-- /INCLUDES -->
 
 	<div class="index-gridbag">
@@ -57,11 +59,6 @@
 			<div class="form">
 				<div class="form-simulation"></div>
 				<div class="container">
-					<?php 
-					include("../php/simulation.php"); 
-					include("../php/logs.php");
-					?>
-
 					<form action="../view/index.php#simulation" method="POST">
 						<table>
 							<tr>

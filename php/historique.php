@@ -1,5 +1,4 @@
 <?php 
-
 function read_history() {
     $file="../assets/historique.csv";
     $fp = fopen($file, "r");
@@ -20,7 +19,6 @@ function read_history() {
             echo "</tr>";
         }
     }
-    
     fclose($fp);
 }
 
@@ -28,3 +26,4 @@ function put_history($data) {
     $file = file_get_contents("../assets/historique.csv");
     file_put_contents("../assets/historique.csv", $data.$file);
 }
+?>

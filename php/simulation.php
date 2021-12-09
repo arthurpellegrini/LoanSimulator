@@ -20,8 +20,9 @@ function simulation()
 
 function compute($capital, $rate, $monthNumber)
 {
-    if ($rate == 0)
+    if ($rate == 0) {
         return round(($capital / $monthNumber), 2);
+    }
     return round(($capital * ($rate / 100) / 12) / (1 - pow((1 + ($rate / 100) / 12), -$monthNumber)), 2);
 }
 

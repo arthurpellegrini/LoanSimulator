@@ -19,12 +19,4 @@ function connect()
         return "<p class=\"message-error\">Nom d'utilisateur ou mot de passe incorrect</p>";
     }
 }
-
-function disconnect()
-{
-    session_start();
-    session_destroy();
-    header("Location: ../view/");
-    exit();
-}
 ?>
