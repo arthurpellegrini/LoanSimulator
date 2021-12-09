@@ -1,5 +1,4 @@
 <?php
-
 function simulation()
 {
     if(isset($_POST['capital'], $_POST['rate'], $_POST['monthNumber']))
@@ -8,14 +7,15 @@ function simulation()
         $rate = $_POST['rate'];
         $monthNumber = $_POST['monthNumber'];
         clear_post();
+
+        $monthlyCost = compute($capital, $rate, $monthNumber);
+        $data = date("d/m/Y").";".$capital." €;".$rate." %;".$monthNumber.";".$monthlyCost." €/mois\n";
+        put_history($data);
+        writeLogs(generateLog($capital, $rate, $monthNumber, $monthlyCost));
+        return $monthlyCost."€";
     }
     else
         return "";
-
-    $montlyCost = compute($capital, $rate, $monthNumber);
-    $data = date("d/m/Y").";".$capital." €;".$rate." %;".$monthNumber.";".$montlyCost." €/mois\n";
-    put_history($data);
-    return $montlyCost."€";
 }
 
 function compute($capital, $rate, $monthNumber)

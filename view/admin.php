@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION["username"], $_SESSION["password"])) {
-    header("Location: ../view/index.php");
+    header("Location: ../view/connexion_form.php?error-message=1");
 } ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
     <link href="../css/styles.css" rel="stylesheet" />
     <title>Projet PHP 2021 - Backend</title>
 </head>
@@ -41,10 +41,18 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
         <h1>Backend</h1>
     </div>
 
-
-    <h2 id="logs">Logs</h2>
-    <div class="logs">
-
+    <?php include("../php/logs.php"); ?>
+    <div class="logs" id="logs">
+        <h2>Logs</h2>
+        <div class="terminal">
+            <div class="terminal-scrollbar" id="terminal">
+                <p><?php readlogs(); ?></p>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="../php/telechargement.php" download>Télécharger</a>
+            <a href="../php/suppresion.php">Supprimer</a>
+        </div>
     </div>
 
     <footer>
@@ -72,5 +80,6 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
 </body>
 
 <script type="text/javascript" src="../script/menu.js"></script>
+<script type="text/javascript" src="../script/scrollbar.js"></script>
 
 </html>

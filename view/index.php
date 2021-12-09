@@ -49,14 +49,18 @@
 	<?php include("../php/historique.php"); ?>
 	<!-- /INCLUDES -->
 
-	<div class="wrapper">
+	<div class="index-gridbag">
 
 		<!-- SIMULATION -->
-		<div class="box1" id="simulation">
+		<div class="index-box1" id="simulation">
 			<h2>Simulation</h2>
 			<div class="form">
+				<div class="form-simulation"></div>
 				<div class="container">
-					<?php include("../php/simulation.php"); ?>
+					<?php 
+					include("../php/simulation.php"); 
+					include("../php/logs.php");
+					?>
 
 					<form action="../view/index.php#simulation" method="POST">
 						<table>
@@ -76,7 +80,7 @@
 								<td class="td_labels"></td>
 								<td class="td_inputs"><div class="inputs-button"><input class="buttonSimulation" type="submit" name="simulate" value="Simuler"></div></td>
 							</tr>
-						</table><br>
+						</table>
 						<h2 class="resultat-simulation"><?php echo simulation(); ?><h2>
 					</form>
 				</div>
@@ -84,7 +88,7 @@
 		</div>
 
 		<!-- HISTORIQUE -->
-		<div class="box2" id="historique">
+		<div class="index-box2" id="historique">
 			<h2>Historique</h2>
 			<div class="content-table">
 				<table>

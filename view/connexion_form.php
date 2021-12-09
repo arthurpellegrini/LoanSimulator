@@ -10,22 +10,28 @@
     <title>Projet PHP 2021 - Connexion</title>
 </head>
 
-
 <body>
     <?php include("../php/connexion.php"); ?>
     <div class="page-connexion">
         <div class="form">
-            <h2 class="connexion-title">Connexion</h2>
-            <div class="container">
-                <form action="" method="POST">
-                    <input type="text" placeholder="Entrer votre identifiant" name="username" required><br>
-                    <input type="password" placeholder="Entrer votre mot de passe" name="password" required><br>
-                    <div class="inputs-button"><input type="submit" name="connexion" value="Connexion"></div><br>
-                    <p class="message-error"><?php $message=connect(); echo $message;?></p>
-                </form>
+            <div class="form-connexion">
+                <h2 class="connexion-title">Connexion</h2>
+                <div class="container">
+                    <form action="" method="POST">
+                        <input type="text" placeholder="Entrer votre identifiant" name="username" required><br>
+                        <input type="password" placeholder="Entrer votre mot de passe" name="password" required><br>
+                        <div class="inputs-button"><input type="submit" name="connexion" value="Connexion"></div><br>
+                        <?php if(isset($_POST['username'],$_POST['password'])){
+                                echo connect(); 
+                            }
+                            if(isset($_GET['error-message']) && $_GET['error-message']==1){
+                                echo "<p class=\"message-error\">Merci de vous authentifier</p><p class=\"hidden\">test classique ;)</p>";
+                            } ?>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+    <p class="hidden coin-gauche">apt install oneko ^^</p>
 </body>
-
 </html>

@@ -16,7 +16,7 @@ function connect()
             $_SESSION["password"] = $adminPassword;
             header("Location: ../view/admin.php");
         }
-        return "<p>Nom d'utilisateur ou mot de passe incorrect</p>";
+        return "<p class=\"message-error\">Nom d'utilisateur ou mot de passe incorrect</p>";
     }
 }
 
@@ -24,7 +24,7 @@ function disconnect()
 {
     session_start();
     session_destroy();
-    header("Location: ../view/index.php");
+    header("Location: ../view/");
     exit();
 }
 ?>

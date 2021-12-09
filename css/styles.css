@@ -60,6 +60,19 @@ h2 {
     line-height: 3rem;
 }
 
+.logs h2 {
+    margin-top: 10px;
+}
+
+.hidden {
+    color: transparent;
+}
+
+.coin-gauche {
+    margin-top: 15%;
+    margin-left: 90%;
+}
+
 .resultat-simulation {
     font-weight: bold;
 }
@@ -138,17 +151,17 @@ h2 {
 
 
 /************************************************
-******************WRAPPER(GRID)******************
+********************GRIDBAG**********************
 ************************************************/
 
-.wrapper {
+.index-gridbag {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 0.7fr 1.3fr;
     grid-template-areas: "simulation historique";
 }
 
-.box1 {
+.index-box1 {
     margin-left: 5%;
     margin-right: 2%;
     grid-column: 1;
@@ -156,7 +169,7 @@ h2 {
     grid-area: simulation;
 }
 
-.box2 {
+.index-box2 {
     margin-left: 2%;
     margin-right: 5%;
     grid-column: 2;
@@ -171,16 +184,84 @@ h2 {
     margin-right: auto;
 }
 
+
+/************************************************
+**********************LOGS***********************
+************************************************/
+
+.logs {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.terminal {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    border-radius: 20px;
+    background: var(--bg-table);
+    color: var(--font-color);
+    font-size: 20px;
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
+}
+
+.terminal-scrollbar {
+    height: 400px;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    overflow-y: auto;
+    scrollbar-color: var(--bg-form) transparent;
+}
+
+.terminal-scrollbar p {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.buttons {
+    display: flex;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.buttons a {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    background: var(--bg-form);
+    border-radius: 50px;
+    box-shadow: 4px 4px 60px var(--shadow-color);
+    color: var(--heading-color);
+}
+
+.buttons a:hover {
+    background: var(--inputs-button-color);
+}
+
+
+/************************************************
+*****************RESPONSIVE**********************
+************************************************/
+
 @media only screen and (max-width: 1000px) {
-    .wrapper {
+    .index-gridbag {
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 0.5fr;
         grid-template-areas: "simulation" "historique";
     }
-    .box1 {
+    .index-box1 {
         margin-right: 5%;
     }
-    .box2 {
+    .index-box2 {
         margin-left: 5%;
     }
     .nav-menu {
@@ -251,6 +332,14 @@ h2 {
     text-align: center;
 }
 
+.form .form-connexion form {
+    padding-bottom: 1rem;
+}
+
+.form .form-simulation form {
+    margin-bottom: 1rem;
+}
+
 .form h2 {
     color: var(--heading-color);
     opacity: .7;
@@ -304,7 +393,7 @@ input::-webkit-outer-spin-button {
 input::-o-inner-spin-button,
 input::-o-outer-spin-button {
     -o-appearance: none;
-    margin: 0
+    margin: 0;
 }
 
 .form table {
