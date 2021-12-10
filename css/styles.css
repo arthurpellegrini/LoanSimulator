@@ -292,6 +292,7 @@ h2 {
     padding: 2% 0% 2% 0%;
     margin-left: 10%;
     margin-right: 10%;
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
 }
 
 .buttons a {
@@ -311,6 +312,7 @@ h2 {
 
 .buttons a:hover {
     background: var(--inputs-button-color);
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
 }
 
 
