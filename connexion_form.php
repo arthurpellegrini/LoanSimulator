@@ -18,7 +18,7 @@
             </a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link">Acceuil</a>
+                    <a href="index.php" class="nav-link">Accueil</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -61,7 +61,7 @@
 				<a href="#">Haut de page</a>
 			</li>
 			<li>
-				<a href="index.php">Acceuil</a>
+				<a href="index.php">Accueil</a>
 			</li>
 		</ul>
 

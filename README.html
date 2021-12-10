@@ -52,8 +52,8 @@
         <div id="presentation">
             <h2>Présentation</h2>
             <p>
-                Bienvenue dans le README de notre projet php. Vous trouverez le sujet du projet <a href="assets/sujet.pdf">ici</a>. Le projet consiste au développement d'un site de simulation de prêt bancaire où l'on peut consulter l'historique des dix
-                dernières simulations.
+                Bienvenue dans le README de notre projet php. Ce projet répond au sujet <a href="assets/sujet.pdf">suivant</a> et consiste au développement d'un site de simulation de prêt bancaire. Ce site est "responsive design", c'est-à-dire que l'on
+                peut réduire la fenêtre sans risque de manquement d'informations.
             </p>
         </div>
         <div id="structure">
@@ -63,47 +63,74 @@
         </div>
         <div id="usage">
             <h2>Usage</h2>
+
+            <p>Dans cette partie, vous trouverez comment utiliser l'application que vous soyez un simple utilisateur ou l'administrateur du site.</p>
+
             <h3>Utilisateur</h3>
             <p>
-                Pour accéder au programme de simulation, il suffit de se rendre dans la page d’accueil et de scroller jusqu'à tomber dessus (ou alors de cliquer sur le menu du haut). Pour effectuer le calcul il suffit de remplir les cases Capital, Taux et Nombre de mois
-                puis de faire simuler pour obtenir un résultat. Il peut également accéder à un historique qui résume les 10 dernières simulations du site.
+                Pour effectuer une simulation, il suffit de vous rendre dans la <a href="/">page d'accueil</a>, puis de vous rendre dans la section <a href="/#simulation">simulation</a>. Dans celle-ci, vous aurez la possibilité de remplir les champs "capital",
+                "taux" et "nombre de mois" qui sont nécessaires à la simulation. Vous retrouverez, ensuite votre simulation dans un tableau contenant l'<a href="/#historique">historique</a> des dix dernières simulations. Enfin, si vous souhaitez refaire
+                une des simulations qui est présente dans le tableau, vous pouvez cliquer à l'aide de votre souris sur la ligne du tableau, et les champs nécessaires à la simulation se rempliront des valeurs présentes sur la ligne cliquée.
             </p>
             <h3>Administrateur</h3>
             <p>
-                En plus de toutes les fonctionnalité présentées plus haut, l'administrateur peut en plus se connecter au back-end. Depuis cette interface, il va pouvoir consulter les logs de façon plus détaillé que sur l’historique. L’administrateur va pouvoir naviguer
-                dedans grâce a une liste déroulante. Le programme a été réalisé pour que ce soit les derniers logs qui soient affiché en premier. L'administrateur va pouvoir télécharger les logs (qui seront sous format .txt) ou bien les supprimer. Il
-                a aussi la possibilité de consulter l'ensemble de l'historique, de télécharger l'historique (au format .csv), ou encore de supprimer l'historique. Pour quitter le Back-end, il suffit d'appuyer sur « déconnexion ».
+                En plus de toutes les fonctionnalités présentées précédemment, l'administrateur peut en plus se <a href="connexion_form.php">connecter</a> pour accéder au backend du site. Une fois connecté l'administrateur n'est pas obligé de se déconnecter
+                pour accéder au reste du site. Depuis cette partie du site caché aux utilisateurs, l'administrateur a la possibilité de consulter, télécharger (archiver) et supprimer les logs ainsi que la totalité de l'historique des simulations.
+
             </p>
             <div id="fonctionnement">
                 <h2>Fonctionnement des fichiers</h2>
 
+                <p>Dans cette partie, vous trouverez comment fonctionnent l'ensemble des fichiers php.</p>
+
                 <h3>Partie Modèle/Contrôleur</h3>
+                <p>Ces fichiers permettent le fonctionnement des différentes fonctionnalités du site.</p>
                 <h4>connexion.php</h4>
+                <p>
+                    Permet la connexion de l'administrateur au backend du site. Pour cela, il fait appel au fichier login.txt qui contient le nom d'utilisateur et le mot de passe hashé à l'aide de sha256, ceci lui permet de comparer ces données avec ceux entrés et ainsi
+                    de donner l'accès ou non au backend.</p>
                 <h4>deconnexion.php</h4>
+                <p>
+                    Permet la déconnexion de l'administrateur, c'est-à-dire la suppression du cookie de session.
+                </p>
                 <h4>historique.php</h4>
+                <p>
+                    Contient la déclaration de deux fonctions, la première permet de lire le fichier historique.csv en retournant un tableau et la seconde permet d'insérer une nouvelle ligne au fichier historique.csv.
+                </p>
                 <h4>logs.php</h4>
+                <p>
+                    Contient la déclaration de trois fonctions, la première permet de créer une variable de type string contenant les logs, la seconde permet d'ajouter du contenu au fichier logs et la troisième permet de lire le fichier logs.txt dans le but de pouvoir afficher
+                    les logs dans le site.
+                </p>
                 <h4>simulation.php</h4>
+                <p>
+                    Permet une simulation à l'aide de trois paramètres : le capital, le taux et le nombre de mois. Celle-ci renvoie une valeur correspondante au montant de la mensualité. Dès lors qu'une simulation est effectuée, les données de celle-ci sont envoyées dans
+                    les fichiers historique.csv et logs.txt.
+                </p>
                 <h4>suppression.php</h4>
+                <p>
+                    Permet la suppression du contenu du fichier historique.csv ou logs.txt suivant le nom de fichier passé grâce à la méthode get.
+                </p>
                 <h4>telechargement.php</h4>
+                <p>
+                    Permet le téléchargement sur la machine de l'administrateur, du fichier historique.csv ou logs.txt suivant le fichier passé grâce à la méthode get.
+                </p>
 
                 <h3>Partie Vue</h3>
+                <p>Dans cette partie, vous trouverez l'ensemble des fichiers qui permettent un affichage au site.</p>
                 <h4>admin.php</h4>
+                <p>
+                    Correspond au backend du site. Ce fichier fait appel à logs.php et à historique.php pour afficher les logs ainsi que l'historique des simulations, mais aussi à téléchargement.php et suppression.php pour télécharger ou supprimer le contenu des logs ou
+                    de l'historique.
+                </p>
                 <h4>connexion_form.php</h4>
+                <p>
+                    Correspond au formulaire de connexion au backend du site. Ce fichier fait appel à connexion.php pour permettre la connexion.
+                </p>
                 <h4>index.php</h4>
-                <h4>README.html</h4>
-
-                <h3>Partie Script</h3>
-                <h4>menu.js</h4>
-                <h4>scrollbar.js</h4>
-
-                <h3>Partie Feuille de styles</h3>
-                <h4>styles.css</h4>
-
-                <h3>Partie Assets</h3>
-                <h4>Répertoire img</h4>
-                <h4>historique.csv</h4>
-                <h4>logs.txt</h4>
-                <h4>login.txt</h4>
+                <p>
+                    Correspond à l'accueil du site sur lequel il est possible d'effectuer des simulations ainsi que de consulter l'historique des dix dernières simulations.
+                </p>
             </div>
         </div>
     </div>
@@ -119,7 +146,7 @@
                 <a href="#">Haut de page</a>
             </li>
             <li>
-                <a href="index.php">Acceuil</a>
+                <a href="index.php">Accueil</a>
             </li>
             <li>
                 <a href="#presentation">Présentation</a>
