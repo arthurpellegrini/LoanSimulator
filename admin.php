@@ -26,6 +26,9 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
                     <a href="#logs" class="nav-link">Logs</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#historique" class="nav-link">Historique</a>
+                </li>
+                <li class="nav-item">
                     <a href="php/deconnexion.php" class="nav-link">Déconnexion</a>
                 </li>
             </ul>
@@ -40,18 +43,44 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
     <div class="title">
         <h1>Backend</h1>
     </div>
+    <!-- INCLUDE -->
+    <?php include("php/logs.php");
+    include("php/historique.php"); ?>
 
-    <?php include("php/logs.php"); ?>
     <div class="logs" id="logs">
         <h2>Logs</h2>
+        <div class="buttons">
+            <a href="php/telechargement.php?file=logs.txt" download>Télécharger</a>
+            <a href="php/suppression.php?file=logs.txt">Supprimer</a>
+        </div>
         <div class="terminal">
             <div class="terminal-scrollbar" id="terminal">
-                <p><?php readlogs(); ?></p>
+                <p><?php readlogs("assets/logs.txt"); ?></p>
             </div>
         </div>
+    </div>
+
+    <div class="historique-backend" id="historique">
+        <h2>Historique</h2>
         <div class="buttons">
-            <a href="php/telechargement.php" download>Télécharger</a>
-            <a href="php/suppresion.php">Supprimer</a>
+            <a href="php/telechargement.php?file=historique.csv" download>Télécharger</a>
+            <a href="php/suppression.php?file=historique.csv">Supprimer</a>
+        </div>
+        <div class="content-table backend">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Capital</th>
+                        <th>Taux</th>
+                        <th>Nombre de Mois</th>
+                        <th>Mensualité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php read_history("assets/historique.csv",count(file("assets/historique.csv"))); ?>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -67,6 +96,9 @@ if (!isset($_SESSION["username"], $_SESSION["password"])) {
                 </li>
                 <li>
                     <a href="#logs">Logs</a>
+                </li>
+                <li>
+                    <a href="#historique">Historique</a>
                 </li>
             </ul>
 

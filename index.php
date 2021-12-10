@@ -45,21 +45,18 @@
 		<h1>Projet Php 2021</h1>
 	</div>
 
-	<!-- INCLUDES -->
-	<?php include("php/historique.php"); 
-	include("php/simulation.php"); 
-	include("php/logs.php");?>
-	<!-- /INCLUDES -->
+	<!-- INCLUDE -->
+	<?php include("php/historique.php"); ?>
 
-	<div class="index-gridbag">
+	<div class="gridbag">
 
 		<!-- SIMULATION -->
-		<div class="index-box1" id="simulation">
+		<div class="simulation" id="simulation">
 			<h2>Simulation</h2>
 			<div class="form">
 				<div class="form-simulation"></div>
 				<div class="container">
-					<form action="#simulation" method="POST">
+					<form action="php/simulation.php" method="POST">
 						<table>
 							<tr>
 								<td class="td_labels"><label for="capital">Capital (€)</label></td>
@@ -78,14 +75,14 @@
 								<td class="td_inputs"><div class="inputs-button"><input class="buttonSimulation" type="submit" name="simulate" value="Simuler"></div></td>
 							</tr>
 						</table>
-						<h2 class="resultat-simulation"><?php echo simulation(); ?><h2>
+						<h2 class="resultat-simulation">Mensualité : <?php if(isset($_GET['mensualite'])){echo $_GET['mensualite']."€";}  ?><h2>
 					</form>
 				</div>
 			</div>
 		</div>
 
 		<!-- HISTORIQUE -->
-		<div class="index-box2" id="historique">
+		<div class="historique" id="historique">
 			<h2>Historique</h2>
 			<div class="content-table">
 				<table>
@@ -99,7 +96,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php read_history(); ?>
+						<?php read_history("assets/historique.csv",10); ?>
 					</tbody>
 				</table>
 			</div>

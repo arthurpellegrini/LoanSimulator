@@ -1,21 +1,17 @@
 <?php
-function simulation()
-{
-    if(isset($_POST['capital'], $_POST['rate'], $_POST['monthNumber']))
-    {
-        $capital = $_POST['capital'];
-        $rate = $_POST['rate'];
-        $monthNumber = $_POST['monthNumber'];
-        clear_post();
+include("historique.php");
+include("logs.php");
 
-        $monthlyCost = compute($capital, $rate, $monthNumber);
-        $data = date("d/m/Y").";".$capital." €;".$rate." %;".$monthNumber.";".$monthlyCost." €/mois\n";
-        put_history($data);
-        writeLogs(generateLog($capital, $rate, $monthNumber, $monthlyCost));
-        return $monthlyCost."€";
-    }
-    else
-        return "";
+if (isset($_POST['capital'], $_POST['rate'], $_POST['monthNumber'])) {
+    $capital = $_POST['capital'];
+    $rate = $_POST['rate'];
+    $monthNumber = $_POST['monthNumber'];
+    $monthlyCost = compute($capital, $rate, $monthNumber);
+    $data = date("d/m/Y") . ";" . $capital . ";" . $rate . ";" . $monthNumber . ";" . $monthlyCost . "\n";
+    put_history("../assets/historique.csv",$data);
+    writeLogs("../assets/logs.txt",generateLog($capital, $rate, $monthNumber, $monthlyCost));
+    $_POST['monthlyCost']=$monthlyCost;
+    header('Location: ../index.php?mensualite=' . $monthlyCost.'#simulation');
 }
 
 function compute($capital, $rate, $monthNumber)
@@ -25,12 +21,3 @@ function compute($capital, $rate, $monthNumber)
     }
     return round(($capital * ($rate / 100) / 12) / (1 - pow((1 + ($rate / 100) / 12), -$monthNumber)), 2);
 }
-
-function clear_post(){
-    if (count($_POST) > 0) {
-        foreach ($_POST as $k=>$v) {
-            unset($_POST[$k]);
-        }
-    }
-}
-?>

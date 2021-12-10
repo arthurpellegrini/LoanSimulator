@@ -1,12 +1,12 @@
 ---------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 09/12/2021 à 23:03:19
-Montant emprunté : 10€
-Mensualités : 10
-Taux : 10%
-Montant mensuel : 1.05€
+Simulation de 127.0.0.1, le 10/12/2021 à 03:47:21
+Montant emprunté : 12456€
+Mensualités : 123
+Taux : 123%
+Montant mensuel : 1276.75€
 ---------------------------------------------------------------------------
-Simulation de 127.0.0.1, le 09/12/2021 à 23:16:47
-Montant emprunté : 10€
-Mensualités : 10
-Taux : 10%
-Montant mensuel : 1.05€
+Simulation de 127.0.0.1, le 10/12/2021 à 03:49:59
+Montant emprunté : 10000.46€
+Mensualités : 90
+Taux : 1.44%
+Montant mensuel : 117.29€

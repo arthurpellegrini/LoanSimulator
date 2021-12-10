@@ -25,13 +25,12 @@
                                 echo connect(); 
                             }
                             if(isset($_GET['error-message']) && $_GET['error-message']==1){
-                                echo "<p class=\"message-error\">Merci de vous authentifier</p><p class=\"hidden\">test classique ;)</p>";
+                                echo "<p class=\"message-error\">Merci de vous authentifier</p>";
                             } ?>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <p class="hidden coin-gauche">apt install oneko ^^</p>
 </body>
 </html>

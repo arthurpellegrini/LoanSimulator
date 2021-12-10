@@ -1,29 +1,41 @@
-<?php 
-function read_history() {
-    $file="assets/historique.csv";
+<?php
+function read_history($file,$nbr_lignes)
+{
     $fp = fopen($file, "r");
 
-    $couleur="pair";
-    for($i=0;$i<10;$i++){
-        $ligne = fgetcsv($fp,1024,";");
-        if($ligne != null){
-            if ($couleur=="pair") {
-                $couleur = "impair";
+    $motif = "pair";
+    for ($i = 0; $i < $nbr_lignes; $i++) {
+        $ligne = fgetcsv($fp, 1024, ";");
+        if ($ligne != null) {
+            if ($motif == "pair") {
+                $motif = "impair";
+            } else {
+                $motif = "pair";
             }
-            else {
-                $couleur = "pair";
+            echo "<tr class='ligne-" . $motif . "'>";
+            for ($j = 0; $j < count($ligne); $j++) {
+                switch ($j):
+                    case 1:
+                        echo "<td>$ligne[$j] €</td>";
+                        break;
+                    case 2:
+                        echo "<td>$ligne[$j] %</td>";
+                        break;
+                    case 4:
+                        echo "<td>$ligne[$j] €/mois</td>";
+                        break;
+                    default:
+                        echo "<td>$ligne[$j]</td>";
+                endswitch;
             }
-            echo "<tr class='ligne-".$couleur."'>";
-            foreach ($ligne as $cell)
-                echo "<td>$cell</td>";
             echo "</tr>";
         }
     }
     fclose($fp);
 }
 
-function put_history($data) {
-    $file = file_get_contents("assets/historique.csv");
-    file_put_contents("assets/historique.csv", $data.$file);
+function put_history($file,$data)
+{
+    $oldfile = file_get_contents($file);
+    file_put_contents($file, $data . $oldfile);
 }
-?>

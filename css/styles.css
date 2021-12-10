@@ -55,31 +55,17 @@ h2 {
     color: var(--font-color);
 }
 
-.simulation h2 {
+.simulation h2,
+.historique h2,
+.historique-backend h2,
+.logs h2 {
     font-size: 2rem;
     line-height: 3rem;
-}
-
-.logs h2 {
-    margin-top: 10px;
 }
 
 .hidden {
     color: transparent;
     opacity: 0;
-}
-
-.coin-gauche {
-    margin-top: 15%;
-    margin-right: 90%;
-}
-
-.resultat-simulation {
-    font-weight: bold;
-}
-
-.message-error {
-    color: var(--font-error-color);
 }
 
 
@@ -155,14 +141,14 @@ h2 {
 ********************GRIDBAG**********************
 ************************************************/
 
-.index-gridbag {
+.gridbag {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 0.7fr 1.3fr;
     grid-template-areas: "simulation historique";
 }
 
-.index-box1 {
+.simulation {
     margin-left: 5%;
     margin-right: 2%;
     grid-column: 1;
@@ -170,13 +156,18 @@ h2 {
     grid-area: simulation;
 }
 
-.index-box2 {
+.historique {
     margin-left: 2%;
     margin-right: 5%;
     grid-column: 2;
     grid-row: 1;
     grid-area: historique;
 }
+
+
+/************************************************
+****************CONNEXION-FORM*******************
+************************************************/
 
 .page-connexion {
     width: 300px;
@@ -185,20 +176,34 @@ h2 {
     margin-right: auto;
 }
 
+.message-error {
+    color: var(--font-error-color);
+}
+
 
 /************************************************
 **********************LOGS***********************
 ************************************************/
 
-.logs {
+.logs,
+.historique-backend {
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 2%;
 }
 
+.historique-backend {
+    margin-top: 100px;
+}
+
+.backend,
 .terminal {
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
+}
+
+.terminal {
     border-radius: 20px;
     background: var(--bg-table);
     color: var(--font-color);
@@ -225,6 +230,7 @@ h2 {
 .buttons {
     display: flex;
     text-align: center;
+    padding: 2% 0% 2% 0%;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -250,58 +256,6 @@ h2 {
 
 
 /************************************************
-*****************RESPONSIVE**********************
-************************************************/
-
-@media only screen and (max-width: 1000px) {
-    .index-gridbag {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.5fr 0.5fr;
-        grid-template-areas: "simulation" "historique";
-    }
-    .index-box1 {
-        margin-right: 5%;
-    }
-    .index-box2 {
-        margin-left: 5%;
-    }
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 4rem;
-        flex-direction: column;
-        background-color: var(--bg-navbar-footer);
-        width: 100%;
-        text-align: center;
-        transition: 0.2s;
-        box-shadow: 20px 20px 40px -6px var(--shadow-color);
-    }
-    .nav-menu.active {
-        left: 0;
-    }
-    .nav-item {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        -webkit-transform: translateY(8px) rotate(45deg);
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-        -webkit-transform: translateY(-8px) rotate(-45deg);
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-
-
-/************************************************
 *************FORMULAIRE SIMULATION***************
 ************************************************/
 
@@ -309,6 +263,10 @@ h2 {
     align-items: center;
     justify-content: center;
     margin-top: 2%;
+}
+
+.resultat-simulation {
+    font-weight: bold;
 }
 
 .form,
@@ -372,6 +330,23 @@ h2 {
     background: var(--inputs-button-color);
 }
 
+.form table {
+    margin: auto;
+    table-layout: fixed;
+}
+
+.td_labels {
+    text-align: center;
+    width: 200px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.td_inputs {
+    width: 200px;
+}
+
 
 /* Firefox */
 
@@ -395,23 +370,6 @@ input::-o-inner-spin-button,
 input::-o-outer-spin-button {
     -o-appearance: none;
     margin: 0;
-}
-
-.form table {
-    margin: auto;
-    table-layout: fixed;
-}
-
-.td_labels {
-    text-align: center;
-    width: 200px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-.td_inputs {
-    width: 200px;
 }
 
 
@@ -468,6 +426,58 @@ input::-o-outer-spin-button {
 .content-table tr:last-child td:last-child {
     -webkit-border-bottom-right-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+
+/************************************************
+*****************RESPONSIVE**********************
+************************************************/
+
+@media only screen and (max-width: 1000px) {
+    .gridbag {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr;
+        grid-template-areas: "simulation" "historique";
+    }
+    .simulation {
+        margin-right: 5%;
+    }
+    .historique {
+        margin-left: 5%;
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background-color: var(--bg-navbar-footer);
+        width: 100%;
+        text-align: center;
+        transition: 0.2s;
+        box-shadow: 20px 20px 40px -6px var(--shadow-color);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 
