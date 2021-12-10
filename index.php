@@ -29,9 +29,22 @@
 				<li class="nav-item">
 					<a href="README.html" class="nav-link">Readme</a>
 				</li>
-				<li class="nav-item">
-					<a href="connexion_form.php" class="nav-link">Connexion</a>
-				</li>
+				<?php session_start();
+				if (isset($_SESSION["username"], $_SESSION["password"])) {
+					echo "
+					<li class=\"nav-item\">
+						<a href=\"admin.php\" class=\"nav-link\">Backend</a>
+					</li>
+					<li class=\"nav-item\">
+							<a href=\"php/deconnexion.php\" class=\"nav-link\">Déconnexion</a>
+					</li>
+					";
+				} else {
+					echo "<li class=\"nav-item\">
+						<a href=\"connexion_form.php\" class=\"nav-link\">Connexion</a>
+					</li>";
+				}
+				?>
 			</ul>
 			<div class="hamburger">
 				<span class="bar"></span>
@@ -72,10 +85,14 @@
 							</tr>
 							<tr>
 								<td class="td_labels"></td>
-								<td class="td_inputs"><div class="inputs-button"><input class="buttonSimulation" type="submit" name="simulate" value="Simuler"></div></td>
+								<td class="td_inputs">
+									<div class="inputs-button"><input class="buttonSimulation" type="submit" name="simulate" value="Simuler"></div>
+								</td>
 							</tr>
 						</table>
-						<h2 class="resultat-simulation">Mensualité : <?php if(isset($_GET['mensualite'])){echo $_GET['mensualite']."€";}  ?><h2>
+						<h2 class="resultat-simulation">Mensualité : <?php if (isset($_GET['mensualite'])) {
+																			echo $_GET['mensualite'] . "€";
+																		}  ?><h2>
 					</form>
 				</div>
 			</div>
@@ -96,7 +113,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php read_history("assets/historique.csv",10); ?>
+						<?php read_history("assets/historique.csv", 10); ?>
 					</tbody>
 				</table>
 			</div>
@@ -119,6 +136,15 @@
 			<li>
 				<a href="#historique">Historique</a>
 			</li>
+			<?php 
+			if (isset($_SESSION["username"], $_SESSION["password"])) {
+				echo "
+				<li>
+					<a href=\"admin.php\">Backend</a>
+				</li>
+					";
+			}
+			?>
 		</ul>
 
 		<p class="copyright">
