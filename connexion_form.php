@@ -51,7 +51,7 @@
     </div>
 
     <!-- FOOTER -->
-	<footer>
+	<footer class="footer-connexion">
 		<div class="social">
 			<a href="https://github.com/arthurpellegrini/loan-simulator"><img src="assets/img/github_logo.png" height="40" alt="Logo de Github." /></a>
 		</div>

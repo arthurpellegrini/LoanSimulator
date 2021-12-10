@@ -228,11 +228,20 @@ h2 {
 ****************CONNEXION-FORM*******************
 ************************************************/
 
+.connexion-title {
+    margin-top: 30%;
+}
+
 .page-connexion {
     max-width: 300px;
-    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.footer-connexion {
+    position: absolute;
+    width: 100%;
+    margin-top: 2%;
 }
 
 .message-error {

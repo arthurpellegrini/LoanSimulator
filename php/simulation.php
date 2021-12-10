@@ -10,7 +10,6 @@ if (isset($_POST['capital'], $_POST['rate'], $_POST['monthNumber'])) {
     $data = date("d/m/Y") . ";" . $capital . ";" . $rate . ";" . $monthNumber . ";" . $monthlyCost . "\n";
     put_history("../assets/historique.csv",$data);
     writeLogs("../assets/logs.txt",generateLog($capital, $rate, $monthNumber, $monthlyCost));
-    $_POST['monthlyCost']=$monthlyCost;
     header('Location: ../index.php?mensualite=' . $monthlyCost.'#simulation');
 }
 
