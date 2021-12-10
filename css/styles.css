@@ -9,8 +9,8 @@
  :root {
     --bg-color1: rgb(134, 191, 226);
     --bg-color2: rgb(112, 126, 227);
-    --readme-a: rgb(43, 138, 62);
-    --readme-a-hover: rgb(30, 122, 95);
+    --readme-a: rgb(224, 224, 224);
+    --readme-a-hover: rgb(126, 3, 3);
     --font-color: rgb(48, 49, 53);
     --font-hover-color: rgb(170, 170, 170);
     --font-error-color: rgb(255, 0, 0);
@@ -80,6 +80,7 @@ h2 {
 .content h2 {
     margin-top: 5%;
     margin-bottom: 2%;
+    text-decoration: underline;
 }
 
 .content h3 {
@@ -89,7 +90,8 @@ h2 {
     text-align: left;
     text-transform: uppercase;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: bold;
+    text-decoration: underline;
     color: var(--font-color);
 }
 
@@ -99,6 +101,7 @@ h2 {
     margin-left: 15%;
     text-align: left;
     text-transform: uppercase;
+    text-decoration: underline;
     font-size: 1.3rem;
     font-weight: 300;
     color: var(--font-color);
