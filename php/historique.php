@@ -12,20 +12,24 @@ function read_history($file,$nbr_lignes)
             } else {
                 $motif = "pair";
             }
-            echo "<tr class='ligne-" . $motif . "'>";
+            echo "<tr class='ligne-" . $motif . "' onclick=\"chargementHistoriqueData(this)\">";
             for ($j = 0; $j < count($ligne); $j++) {
                 switch ($j):
+                    case 0:
+                        echo "<td>$ligne[$j]</td>";
+                        break;
                     case 1:
                         echo "<td>$ligne[$j] €</td>";
                         break;
                     case 2:
                         echo "<td>$ligne[$j] %</td>";
                         break;
+                    case 3:
+                        echo "<td>$ligne[$j]</td>";
+                        break;
                     case 4:
                         echo "<td>$ligne[$j] €/mois</td>";
                         break;
-                    default:
-                        echo "<td>$ligne[$j]</td>";
                 endswitch;
             }
             echo "</tr>";

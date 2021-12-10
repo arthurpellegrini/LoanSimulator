@@ -90,7 +90,7 @@
 								</td>
 							</tr>
 						</table>
-						<h2 class="resultat-simulation">Mensualité : <?php if (isset($_GET['mensualite'])) {
+						<h2 class="resultat-simulation" id="resultat-simulation">Mensualité : <?php if (isset($_GET['mensualite'])) {
 																			echo $_GET['mensualite'] . "€";
 																		}  ?><h2>
 					</form>
@@ -154,5 +154,6 @@
 </body>
 
 <script type="text/javascript" src="script/menu.js"></script>
+<script type="text/javascript" src="script/replace.js"></script>
 
 </html>

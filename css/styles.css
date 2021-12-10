@@ -22,6 +22,7 @@
     --bg-head-table: rgba(255, 255, 255, 0.4);
     --bg-table: rgba(255, 255, 255, 0.3);
     --bg-table2: rgba(255, 255, 255, 0.4);
+    --bg-table_hover: rgb(233, 233, 233);
     --bg-navbar-footer: rgb(255, 255, 255);
     font-family: 'Josefin Slab', serif;
 }
@@ -241,7 +242,7 @@ h2 {
 .footer-connexion {
     position: absolute;
     width: 100%;
-    margin-top: 2%;
+    margin-top: 10%;
 }
 
 .message-error {
@@ -494,6 +495,28 @@ input::-o-outer-spin-button {
 .content-table tr:last-child td:last-child {
     -webkit-border-bottom-right-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.content-table tr:not(:last-child):hover {
+    background-color: var(--bg-table_hover);
+}
+
+.content-table tr:last-child:hover td:first-child {
+    -webkit-border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: var(--bg-table_hover);
+}
+
+.content-table tr:last-child:hover td:last-child {
+    -webkit-border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: var(--bg-table_hover);
+}
+
+.content-table tr:last-child:hover td:nth-child(2),
+.content-table tr:last-child:hover td:nth-child(3),
+.content-table tr:last-child:hover td:nth-child(4) {
+    background-color: var(--bg-table_hover);
 }
 
 
