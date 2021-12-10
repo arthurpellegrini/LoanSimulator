@@ -305,7 +305,7 @@ h2 {
     text-decoration: none;
     background: var(--bg-form);
     border-radius: 50px;
-    box-shadow: 4px 4px 60px var(--shadow-color);
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
     color: var(--heading-color);
 }
 
@@ -373,7 +373,7 @@ h2 {
     padding: 1rem;
     width: 200px;
     border-radius: 50px;
-    box-shadow: 4px 4px 60px var(--shadow-color);
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
     color: var(--heading-color);
     transition: all .3s;
     margin-bottom: 2em;
@@ -385,7 +385,7 @@ h2 {
     border-left: 1px solid var(--bg-table);
     border-top: 1px solid var(--bg-table);
     border-radius: 50px;
-    box-shadow: 4px 4px 60px var(--shadow-color);
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
     background: var(--inputs-button-color);
 }
 
