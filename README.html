@@ -53,7 +53,7 @@
             <h2>Présentation</h2>
             <p>
                 Bienvenue dans le README de notre projet php. Ce projet répond au sujet <a href="assets/sujet.pdf">suivant</a> et consiste au développement d'un site de simulation de prêt bancaire. Ce site est "responsive design", c'est-à-dire que l'on
-                peut réduire la fenêtre sans risque de manquement d'informations. Bien que notre site soit plus optimisé sur Firefox, nous avons essayé de faire en sorte que toutes fonctionnalités de la feuille de style puissent-être visibles sur tout type de navigateur.
+                peut réduire la fenêtre sans risque de manquement d'informations. Bien que notre site soit optimisé pour Firefox, nous avons fait en sorte que toutes les fonctionnalités de la feuille de style puissent-être visibles sur tout type de navigateur.
             </p>
         </div>
         <div id="structure">
@@ -70,12 +70,12 @@
             <p>
                 Pour effectuer une simulation, il suffit de vous rendre dans la <a href="/">page d'accueil</a>, puis de vous rendre dans la section <a href="/#simulation">simulation</a>. Dans celle-ci, vous aurez la possibilité de remplir les champs "capital",
                 "taux" et "nombre de mois" qui sont nécessaires à la simulation. Vous retrouverez, ensuite votre simulation dans un tableau contenant l'<a href="/#historique">historique</a> des dix dernières simulations. Enfin, si vous souhaitez refaire
-                une des simulations qui est présente dans le tableau, vous pouvez cliquer à l'aide de votre souris sur la ligne du tableau, et les champs nécessaires à la simulation se rempliront des valeurs présentes sur la ligne cliquée.
+                une des simulations qui est présente dans le tableau, vous pouvez cliquer à l'aide de votre souris sur la ligne du tableau, et les champs nécessaires à la simulation se rempliront automatiquement avec les valeurs présentes sur la ligne cliquée.
             </p>
             <h3>Administrateur</h3>
             <p>
-                En plus de toutes les fonctionnalités présentées précédemment, l'administrateur peut en plus se <a href="connexion_form.php">connecter</a> pour accéder au backend du site. Une fois connecté l'administrateur n'est pas obligé de se déconnecter
-                pour accéder au reste du site. Depuis cette partie du site caché aux utilisateurs, l'administrateur a la possibilité de consulter, télécharger (archiver) et supprimer les logs ainsi que la totalité de l'historique des simulations.
+                En plus de toutes les fonctionnalités présentées précédemment, l'administrateur peut se <a href="connexion_form.php">connecter</a> pour accéder au backend (panel administrateur) du site. Une fois connecté l'administrateur n'est pas obligé de se déconnecter
+                pour accéder au reste du site. Depuis cette partie du site cachée aux utilisateurs, l'administrateur a la possibilité de consulter, télécharger (archiver) et supprimer les logs ainsi que la totalité de l'historique des simulations.
 
             </p>
             <div id="fonctionnement">
@@ -91,11 +91,11 @@
                     de donner l'accès ou non au backend.</p>
                 <h4>deconnexion.php</h4>
                 <p>
-                    Permet la déconnexion de l'administrateur, c'est-à-dire la suppression du cookie de session.
+                    Permet la déconnexion de l'administrateur et donc, la suppression du cookie de session.
                 </p>
                 <h4>historique.php</h4>
                 <p>
-                    Contient la déclaration de deux fonctions, la première permet de lire le fichier historique.csv en retournant un tableau et la seconde permet d'insérer une nouvelle ligne au fichier historique.csv.
+                    Contient deux fonctions liées à l'historique. La première permet de lire le fichier historique.csv en retournant un tableau et la seconde permet d'insérer une nouvelle ligne au fichier historique.csv.
                 </p>
                 <h4>logs.php</h4>
                 <p>
@@ -113,11 +113,11 @@
                 </p>
                 <h4>telechargement.php</h4>
                 <p>
-                    Permet le téléchargement sur la machine de l'administrateur, du fichier historique.csv ou logs.txt suivant le fichier passé grâce à la méthode get.
+                    Permet le téléchargement du fichier historique.csv ou logs.txt sur la machine de l'administrateur. Le choix du fichier à téléchargeer se fait en suivant le fichier passé grâce à la méthode get.
                 </p>
 
                 <h3>Partie Vue</h3>
-                <p>Dans cette partie, vous trouverez l'ensemble des fichiers qui permettent un affichage au site.</p>
+                <p>Dans cette partie, vous trouverez l'ensemble des fichiers qui permettent un affichage du site.</p>
                 <h4>admin.php</h4>
                 <p>
                     Correspond au backend du site. Ce fichier fait appel à logs.php et à historique.php pour afficher les logs ainsi que l'historique des simulations, mais aussi à téléchargement.php et suppression.php pour télécharger ou supprimer le contenu des logs ou
