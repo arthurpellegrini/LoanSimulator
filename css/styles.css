@@ -305,7 +305,7 @@ h2 {
     text-decoration: none;
     background: var(--bg-form);
     border-radius: 50px;
-    box-shadow: 4px 4px 60px var(--shadow-color);
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
     color: var(--heading-color);
 }
 
