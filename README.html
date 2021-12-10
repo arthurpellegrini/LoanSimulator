@@ -24,13 +24,16 @@
                     <a href="./" class="nav-link">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Section1</a>
+                    <a href="#presentation" class="nav-link">Présentation</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Section2</a>
+                    <a href="#structure" class="nav-link">Structure</a>
                 </li>
                 <li class="nav-item">
-                    <a href="connexion_form.php" class="nav-link">Connexion</a>
+                    <a href="#usage" class="nav-link">Usage</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#fonctionnement" class="nav-link">Fonctionnement</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -43,6 +46,66 @@
 
     <div class="title">
         <h1>README</h1>
+    </div>
+
+    <div class="content">
+        <div id="presentation">
+            <h2>Présentation</h2>
+            <p>
+                Bienvenue dans le README de notre projet php. Vous trouverez le sujet du projet <a href="assets/sujet.pdf">ici</a>. Le projet consiste au développement d'un site de simulation de prêt bancaire où l'on peut consulter l'historique des dix
+                dernières simulations.
+            </p>
+        </div>
+        <div id="structure">
+            <h2>Structure du site</h2>
+            <p>Le schéma ci-dessous décrit le fonctionnement du site à haut niveau d'abstraction.</p>
+            <img class="schema" src="assets/img/schema.png" alt="Schéma structure du site" />
+        </div>
+        <div id="usage">
+            <h2>Usage</h2>
+            <h3>Utilisateur</h3>
+            <p>
+                Pour accéder au programme de simulation, il suffit de se rendre dans la page d’accueil et de scroller jusqu'à tomber dessus (ou alors de cliquer sur le menu du haut). Pour effectuer le calcul il suffit de remplir les cases Capital, Taux et Nombre de mois
+                puis de faire simuler pour obtenir un résultat. Il peut également accéder à un historique qui résume les 10 dernières simulations du site.
+            </p>
+            <h3>Administrateur</h3>
+            <p>
+                En plus de toutes les fonctionnalité présentées plus haut, l'administrateur peut en plus se connecter au back-end. Depuis cette interface, il va pouvoir consulter les logs de façon plus détaillé que sur l’historique. L’administrateur va pouvoir naviguer
+                dedans grâce a une liste déroulante. Le programme a été réalisé pour que ce soit les derniers logs qui soient affiché en premier. L'administrateur va pouvoir télécharger les logs (qui seront sous format .txt) ou bien les supprimer. Il
+                a aussi la possibilité de consulter l'ensemble de l'historique, de télécharger l'historique (au format .csv), ou encore de supprimer l'historique. Pour quitter le Back-end, il suffit d'appuyer sur « déconnexion ».
+            </p>
+            <div id="fonctionnement">
+                <h2>Fonctionnement des fichiers</h2>
+
+                <h3>Partie Modèle/Contrôleur</h3>
+                <h4>connexion.php</h4>
+                <h4>deconnexion.php</h4>
+                <h4>historique.php</h4>
+                <h4>logs.php</h4>
+                <h4>simulation.php</h4>
+                <h4>suppression.php</h4>
+                <h4>telechargement.php</h4>
+
+                <h3>Partie Vue</h3>
+                <h4>admin.php</h4>
+                <h4>connexion_form.php</h4>
+                <h4>index.php</h4>
+                <h4>README.html</h4>
+
+                <h3>Partie Script</h3>
+                <h4>menu.js</h4>
+                <h4>scrollbar.js</h4>
+
+                <h3>Partie Feuille de styles</h3>
+                <h4>styles.css</h4>
+
+                <h3>Partie Assets</h3>
+                <h4>Répertoire img</h4>
+                <h4>historique.csv</h4>
+                <h4>logs.txt</h4>
+                <h4>login.txt</h4>
+            </div>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -59,10 +122,16 @@
                 <a href="index.php">Acceuil</a>
             </li>
             <li>
-                <a href="#">Section1</a>
+                <a href="#presentation">Présentation</a>
             </li>
             <li>
-                <a href="#">Section2</a>
+                <a href="#structure">Structure</a>
+            </li>
+            <li>
+                <a href="#usage">Usage</a>
+            </li>
+            <li>
+                <a href="#fonctionnement">Fonctionnement</a>
             </li>
         </ul>
 

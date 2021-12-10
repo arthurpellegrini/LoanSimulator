@@ -9,6 +9,8 @@
  :root {
     --bg-color1: rgb(134, 191, 226);
     --bg-color2: rgb(112, 126, 227);
+    --readme-a: rgb(43, 138, 62);
+    --readme-a-hover: rgb(30, 122, 95);
     --font-color: rgb(48, 49, 53);
     --font-hover-color: rgb(170, 170, 170);
     --font-error-color: rgb(255, 0, 0);
@@ -58,7 +60,8 @@ h2 {
 .simulation h2,
 .historique h2,
 .historique-backend h2,
-.logs h2 {
+.logs h2,
+.content h2 {
     font-size: 2rem;
     line-height: 3rem;
 }
@@ -66,6 +69,62 @@ h2 {
 .hidden {
     color: transparent;
     opacity: 0;
+}
+
+
+/************************************************
+********************README***********************
+************************************************/
+
+.content h2 {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.content h3 {
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--font-color);
+}
+
+.content h4 {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 12%;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--font-color);
+}
+
+.content p {
+    text-align: justify;
+    font-size: 1.2rem;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.content a {
+    color: var(--readme-a);
+}
+
+.content a:hover {
+    text-decoration: underline;
+    color: var(--readme-a-hover);
+}
+
+.schema {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 20px 20px 40px -6px var(--shadow-color);
 }
 
 
