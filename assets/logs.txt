@@ -10,3 +10,9 @@ Montant emprunté : 10000.46€
 Mensualités : 90
 Taux : 1.44%
 Montant mensuel : 117.29€
+---------------------------------------------------------------------------
+Simulation de 127.0.0.1, le 10/12/2021 à 15:32:07
+Montant emprunté : 1€
+Mensualités : 1
+Taux : 1%
+Montant mensuel : 1€
